@@ -13,6 +13,8 @@ class MultiSet(object):
         """
         choose a representation
         """
+        self.lista_ordinata = elems
+        self.lista_ordinata.sort()
         pass
 
     def add(self, e):
