@@ -31,7 +31,7 @@ class MultiSet(object):
         None.
 
         """
-        pass
+        
 
     def remove(self, e):
         """
@@ -89,7 +89,7 @@ class MultiSet(object):
         new_ms : Multiset
             the union between the object and ms
         """
-        pass
+     
 
     def intersection(self, ms):
         """
@@ -106,7 +106,7 @@ class MultiSet(object):
         new_ms : Multiset
             the intersection between the object and ms
         """
-        pass
+        
 
     def difference(self,ms):
         """
@@ -123,7 +123,7 @@ class MultiSet(object):
         new_ms : Multiset
             the difference between the object and ms
         """
-        pass
+       
 
 
 if __name__ == "__main__":
