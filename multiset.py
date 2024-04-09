@@ -15,7 +15,7 @@ class MultiSet(object):
         """
         self.lista_ordinata = elems
         self.lista_ordinata.sort()
-        pass
+        
 
     def add(self, e):
         """
@@ -49,7 +49,7 @@ class MultiSet(object):
         """
 		if e in self.lista_ordinata:
             self.lista_ordinata.remove(e) 
-        pass
+        
 
     def membership_test(self, e):
         """
@@ -66,7 +66,13 @@ class MultiSet(object):
             if element e has multiplicity > 1
 
         """
-        pass
+        count = self.lista_ordinata.count(e)
+        if count>1:
+            return True
+        else:
+            return False
+
+       
 
     def union(self, ms):
         """
