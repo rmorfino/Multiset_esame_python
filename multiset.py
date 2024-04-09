@@ -31,6 +31,8 @@ class MultiSet(object):
         None.
 
         """
+        self.lista_ordinata.append(e)
+        self.lista_ordinata.sort()
         
 
     def remove(self, e):
@@ -89,7 +91,9 @@ class MultiSet(object):
         new_ms : Multiset
             the union between the object and ms
         """
-     
+        lista_unione = self.lista_ordinata + ms.lista_ordinata
+        lista_unione.sort()
+        return MultiSet(lista_unione)
 
     def intersection(self, ms):
         """
@@ -106,7 +110,14 @@ class MultiSet(object):
         new_ms : Multiset
             the intersection between the object and ms
         """
-        
+        int_ms = MultiSet()     
+        ms_copy = deepcopy(ms)
+        for el in self.lista_ordinata:
+           if el in ms_copy.lista_ordinata:
+               int_ms.lista_ordinata.append(el)
+               ms_copy.lista_ordinata.remove(el)
+        int_ms.lista_ordinata.sort()       
+        return int_ms     
 
     def difference(self,ms):
         """
@@ -123,7 +134,13 @@ class MultiSet(object):
         new_ms : Multiset
             the difference between the object and ms
         """
-       
+        diff_ms = MultiSet(self.lista_ordinata.copy())
+    
+        for el in ms.lista_ordinata:
+            if el in diff_ms.lista_ordinata:
+                diff_ms.lista_ordinata.remove(el)
+          
+        return diff_ms
 
 
 if __name__ == "__main__":
