@@ -45,6 +45,8 @@ class MultiSet(object):
         None.
 
         """
+		if e in self.lista_ordinata:
+            self.lista_ordinata.remove(e) 
         pass
 
     def membership_test(self, e):
